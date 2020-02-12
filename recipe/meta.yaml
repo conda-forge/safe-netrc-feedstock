@@ -1,5 +1,5 @@
 {% set name = "safe-netrc" %}
-{% set version = "0.0.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,11 +7,11 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 38dc3d66f78c6b21beff2e60b45e24159589d193033520e84d370070a958b6ff
+  sha256: 55fe78dfc8bda48ee5b26c930a8efdecbb7ff5b5a45e2552381c84f13bb4a98a
 
 build:
   noarch: "python"
-  number: 1001
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
@@ -34,7 +34,7 @@ about:
   home: "https://git.ligo.org/emfollow/safe-netrc"
   license: "GPL-2.0-or-later"
   license_family: "GPL"
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.md'
+  license_file: "LICENSE.md"
   summary: "Safe netrc file parser"
   description: "This package provides a subclass of the Python standard library netrc.netrc class to add some custom behaviors."
 
