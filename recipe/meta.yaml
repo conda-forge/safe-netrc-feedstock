@@ -34,7 +34,7 @@ about:
   home: "https://git.ligo.org/emfollow/safe-netrc"
   license: "GPL-2.0-or-later"
   license_family: "GPL"
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.md'
+  license_file: "LICENSE.md"
   summary: "Safe netrc file parser"
   description: "This package provides a subclass of the Python standard library netrc.netrc class to add some custom behaviors."
 
