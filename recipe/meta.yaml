@@ -1,18 +1,18 @@
 {% set name = "safe-netrc" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 55fe78dfc8bda48ee5b26c930a8efdecbb7ff5b5a45e2552381c84f13bb4a98a
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 1dcc7263b4d9ce72e0109d8e2bc9ba89c8056ccc618d26c8c94802c6fd753720
 
 build:
-  noarch: "python"
+  noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
@@ -31,12 +31,12 @@ test:
     - python -m pytest -v -rs --pyargs safe_netrc.tests
 
 about:
-  home: "https://git.ligo.org/emfollow/safe-netrc"
-  license: "GPL-2.0-or-later"
-  license_family: "GPL"
-  license_file: "LICENSE.md"
-  summary: "Safe netrc file parser"
-  description: "This package provides a subclass of the Python standard library netrc.netrc class to add some custom behaviors."
+  home: https://git.ligo.org/emfollow/safe-netrc
+  license: GPL-2.0-or-later
+  license_family: GPL
+  license_file: LICENSE.md
+  summary: Safe netrc file parser
+  description: This package provides a subclass of the Python standard library netrc.netrc class to add some custom behaviors.
 
 extra:
   recipe-maintainers:
