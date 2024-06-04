@@ -12,15 +12,16 @@ source:
 build:
   noarch: python
   number: 0
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
-    - setuptools >=30.3.0
+    - python >=3.7
+    - setuptools >=61
+    - setuptools-scm >=6.2
   run:
-    - python
+    - python >=3.7
 
 test:
   imports:
@@ -31,7 +32,7 @@ test:
     - python -m pytest -v -rs --pyargs safe_netrc.tests
 
 about:
-  home: https://git.ligo.org/emfollow/safe-netrc
+  home: https://git.ligo.org/computing/software/safe-netrc
   license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE.md
