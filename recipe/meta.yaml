@@ -27,8 +27,13 @@ test:
   imports:
     - safe_netrc
   requires:
+    - pip
     - pytest
   commands:
+    # check requirements
+    - python -m pip check
+    - python -m pip show safe-netrc
+    # run test suite
     - python -m pytest -v -rs --pyargs safe_netrc.tests
 
 about:
